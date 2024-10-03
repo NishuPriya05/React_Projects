@@ -9,8 +9,9 @@
   right: 0;
   padding: 10px; 
   gap: 4px;
+  background-color: beige;
+  max-width: 480px !important;
   border-radius: 10px;
-  box-sizing: content-box;
 }
 
 .button {
