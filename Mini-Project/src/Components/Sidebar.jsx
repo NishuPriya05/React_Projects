@@ -4,7 +4,7 @@ import { useState } from "react";
 
 // eslint-disable-next-line react/prop-types
 const Sidebar = ({ children }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const toggle = () => setIsOpen(!isOpen);
   const menuItem = [
     {
@@ -29,13 +29,13 @@ const Sidebar = ({ children }) => {
     },
   ];
   return (
-    <div className="container">
+    <div className="cont">
       <div style={{ width: isOpen ? "200px" : "50px" }} className="sidebar">
         <div className="top-section">
           <h1 style={{ display: isOpen ? "block" : "none" }} className="logo">
-            LOGO
+           Dashboard
           </h1>
-          <div style={{ marginLeft: isOpen ? "50px" : "0px" }} className="bars">
+          <div style={{ marginLeft: isOpen ? "30px" : "0px" }} className="bars">
             <FaBars onClick={toggle} />
           </div>
         </div>
@@ -56,7 +56,7 @@ const Sidebar = ({ children }) => {
           </NavLink>
         ))}
       </div>
-      <main>{children}</main>
+      <main className="p">{children}</main>
     </div>
   );
 };
