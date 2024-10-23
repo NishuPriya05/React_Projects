@@ -29,13 +29,22 @@ const Sidebar = ({ children }) => {
     },
   ];
   return (
-    <div className="cont">
-      <div style={{ width: isOpen ? "200px" : "50px" }} className="sidebar">
-        <div className="top-section">
-          <h1 style={{ display: isOpen ? "block" : "none" }} className="logo">
-           Dashboard
+    <div>
+      <div
+        style={{ width: isOpen ? "200px" : "50px" }}
+        className="bg-black text-white h-screen w-[200px] transition-all duration-500 ease-in-out"
+      >
+        <div className="items-center p-[20px_15px] flex">
+          <h1
+            style={{ display: isOpen ? "block" : "none" }}
+            className="text-[25px]"
+          >
+            Dashboard
           </h1>
-          <div style={{ marginLeft: isOpen ? "30px" : "0px" }} className="bars">
+          <div
+            style={{ marginLeft: isOpen ? "30px" : "0px" }}
+            className="flex text-[25px] ml-[50px]"
+          >
             <FaBars onClick={toggle} />
           </div>
         </div>
@@ -43,20 +52,23 @@ const Sidebar = ({ children }) => {
           <NavLink
             to={item.path}
             key={index}
-            className="link"
-            activeclassname="active"
+            className={({ isActive }) =>
+              `flex p-[10px_15px] gap-[15px] transition-all duration-500 ${
+                isActive ? "bg-[lightskyblue] text-black" : "text-white hover:bg-[lightskyblue] hover:text-black"
+              }`
+            }
           >
-            <div className="icon">{item.icon}</div>
+            <div className="text-[25px] inline-flex items-center">{item.icon}</div>
             <div
               style={{ display: isOpen ? "block" : "none" }}
-              className="link_text"
+              className="text-[20px]"
             >
               {item.name}
             </div>
           </NavLink>
         ))}
       </div>
-      <main className="p">{children}</main>
+      <main className="w-full p-5">{children}</main>
     </div>
   );
 };

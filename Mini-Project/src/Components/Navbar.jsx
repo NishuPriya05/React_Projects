@@ -1,9 +1,26 @@
+import { useState } from "react";
 import { FaSearch, FaBell, FaUserCircle } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom"; // Import useNavigate for navigation
 
 const Navbar = () => {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const navigate = useNavigate(); // Hook for programmatic navigation
+
+  const toggleDropdown = () => {
+    setDropdownOpen((prev) => !prev);
+  };
+
+  const handleLinkClick = () => {
+    setDropdownOpen(false); // Close the dropdown when a link is clicked
+  };
+
+  const handleLogout = () => {
+    // Implement any logout logic here (e.g., clearing tokens, etc.)
+    navigate("/"); // Navigate to home page on logout
+  };
+
   return (
-    <nav className="bg-black px-7 py-4  flex justify-between max-w-full">
+    <nav className="bg-black px-7 py-4 flex justify-between max-w-full">
       <div className="flex items-center text-xl">
         <span className="text-white font-semibold">My Website</span>
       </div>
@@ -23,20 +40,37 @@ const Navbar = () => {
           <FaBell className="w-6 h-6" />
         </div>
         <div className="relative">
-
-          <button className="text-white group">
-            <FaUserCircle className="w-6 h-6 mt-2"/>
-            <div className="z-10 hidden absolute bg-white rounde-lg shadow w-32 group-focus:block top-full right-0">
+          <div 
+            className="text-white cursor-pointer group"
+            onClick={toggleDropdown} // Toggle dropdown
+          >
+            <FaUserCircle className="w-7 h-7 mt-1" />
+          </div>
+          {dropdownOpen && (
+            <div className="absolute right-0 mt-2 bg-white rounded-lg shadow w-32 z-10">
               <ul className="py-2 text-sm text-gray-950">
                 <li>
-                  <NavLink to="profile">Profile</NavLink>
+                  <NavLink 
+                    to="/profile" 
+                    className={({ isActive }) => 
+                      `block px-4 py-2 ${isActive ? "bg-gray-200 text-black" : "text-gray-950"} hover:bg-gray-200`
+                    }
+                    onClick={handleLinkClick} // Close dropdown on link click
+                  >
+                    Profile
+                  </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/">Log Out</NavLink>
+                  <button 
+                    className="block px-4 py-2 text-gray-950 hover:bg-gray-200 w-full text-left"
+                    onClick={handleLogout} // Logout function
+                  >
+                    Log Out
+                  </button>
                 </li>
               </ul>
             </div>
-          </button>
+          )}
         </div>
       </div>
     </nav>
