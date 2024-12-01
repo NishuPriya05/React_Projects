@@ -1,6 +1,6 @@
 .my-button {
   border-radius: 0px 5px 5px 0px !important;
-  letter-spacing: 1px;  
+  letter-spacing: 1px;
 }
 .my-input {
   width: 400px !important;
@@ -14,7 +14,6 @@
 
 .third,
 .fourth {
-  /* margin: 0px 20px; */
   margin-left: 20px;
 }
 
@@ -46,15 +45,4 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  opacity: 1;
- 
 }
-
-.root{
-  background-image: url(assets/yodel-io-customer-care-tips.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: 0.5;
-}
-
-
