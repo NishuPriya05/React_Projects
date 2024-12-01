@@ -1,0 +1,60 @@
+.my-button {
+  border-radius: 0px 5px 5px 0px !important;
+  letter-spacing: 1px;  
+}
+.my-input {
+  width: 400px !important;
+  border: 1px solid black;
+  border-radius: 5px 0px 0px 5px !important;
+}
+
+.form-control:focus {
+  box-shadow: none !important;
+}
+
+.third,
+.fourth {
+  /* margin: 0px 20px; */
+  margin-left: 20px;
+}
+
+.home {
+  font-size: 19px;
+  color: orange;
+}
+
+.third input {
+  width: 16px;
+  height: 16px;
+}
+
+.fourth input {
+  width: 16px;
+  height: 16px;
+}
+
+.ten {
+  background: #373b3ef0;
+  width: fit-content;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.fifth {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  opacity: 1;
+ 
+}
+
+.root{
+  background-image: url(assets/yodel-io-customer-care-tips.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+}
+
+
