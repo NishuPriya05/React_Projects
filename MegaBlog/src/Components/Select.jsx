@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, { useId } from "react";
 
 function Select({ options, label, className, ...props }, ref) {
