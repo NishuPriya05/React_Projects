@@ -1,9 +1,10 @@
-
-
+import { Signup as SignupComponent } from "../Components/index";
 function Signup() {
   return (
-    <div>Signup</div>
-  )
+    <div className="py-8">
+      <SignupComponent />
+    </div>
+  );
 }
 
-export default Signup
+export default Signup;
